@@ -14,7 +14,7 @@ var CatStore = ((oldCatStore) => {
 	}
 
 	oldCatStore.domString = (inputArray) => {
-		let catz;
+		let catz = "";
 		let ownerBtn;
 		inputArray.forEach((cat, i) => {
 			if (cat.owner !== "None") {
