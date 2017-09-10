@@ -23,7 +23,7 @@ var CatStore = ((oldCatStore) => {
 		let catsRequest = new XMLHttpRequest();
 		catsRequest.addEventListener("load", CatStore.catLoadWorks)
 		catsRequest.addEventListener("error", CatStore.logFailedRequest)
-		catsRequest.open("GET", "cats.json")
+		catsRequest.open("GET", "./JSON/cats.json")
 		catsRequest.send();
 	}
 
@@ -31,7 +31,7 @@ var CatStore = ((oldCatStore) => {
 		let ownersRequest = new XMLHttpRequest();
 		ownersRequest.addEventListener("load", CatStore.ownerLoadWorks)
 		ownersRequest.addEventListener("error", CatStore.logFailedRequest)
-		ownersRequest.open("GET", "owners.json")
+		ownersRequest.open("GET", "./JSON/owners.json")
 		ownersRequest.send();
 
 	}
