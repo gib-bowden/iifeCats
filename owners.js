@@ -9,6 +9,16 @@ var CatStore = ((oldCatStore) => {
 		owners = arr; 
 	}
 
+	oldCatStore.getOwnerIdByName = (str) => {
+		let ownerId; 
+		owners.forEach((owner) => {
+			if (str.toLowerCase() === owner.name.toLowerCase()) {
+				ownerId = owner.id
+			}
+		})
+		return ownerId
+	} 
+
 	return oldCatStore
 
 })(CatStore || {})

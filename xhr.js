@@ -13,7 +13,6 @@ var CatStore = ((oldCatStore) => {
 		let catArr = CatStore.getCats();
 		let ownerArr = CatStore.getOwners();
 		CatStore.createCombinedArr(catArr, ownerArr)
-		//this.createCombinedArr(cats, owners)
 	}
 
 	oldCatStore.logFailedRequest = () => {
