@@ -18,7 +18,7 @@ var CatStore = ((oldCatStore) => {
 		})
 		return ownerId
 	} 
-
+	
 	return oldCatStore
 
 })(CatStore || {})
