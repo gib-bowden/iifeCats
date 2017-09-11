@@ -3,10 +3,10 @@ CatStore.catsXHR()
 document.getElementById("cats-container").addEventListener("click", (e) => {
 	if (e.target.id.indexOf("adopt") === 0) {
 		let catIndex = e.target.id.split("-")[1]
-		CatStore.adoptCat(catIndex); 
+		CatStore.launchAdoptModal(catIndex)
+		
 	}	 
 })
-
 
 document.getElementById("filters-container").addEventListener("click", (e) => {
 	let btnIds = e.target.id.split("-");
@@ -20,4 +20,9 @@ document.getElementById("filters-container").addEventListener("click", (e) => {
 	}
 })
 
-
+document.getElementById("save-modal").addEventListener("click", (e) => {
+	let catIndex = document.getElementById("currentCatIndex").innerHTML	
+	let ownerSelectionId = CatStore.getOwnerIdByName(document.getElementById("owner-container").value)
+	CatStore.adoptCat(catIndex, ownerSelectionId);
+	
+})

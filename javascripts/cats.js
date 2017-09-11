@@ -18,7 +18,7 @@ var CatStore = ((oldCatStore) => {
 		return filteredCats = arr; 
 	}
 
-	oldCatStore.adoptCat = (index) => {
+	oldCatStore.adoptCat = (index, ownerId) => {
 		let adoptableCats = []; 
 		if (CatStore.getFilteredCats().length === 0) {
 			shownCats = CatStore.getCats(); 
@@ -26,7 +26,7 @@ var CatStore = ((oldCatStore) => {
 		else {
 			shownCats = CatStore.getFilteredCats(); 
 		}
-		shownCats[index].ownerId = 1; 
+		shownCats[index].ownerId = ownerId; 
 		let owners = CatStore.getOwners()
 		CatStore.createCombinedArr(shownCats, owners)
 	}

@@ -1,6 +1,5 @@
 var CatStore = ((oldCatStore) => {
 
-
 	oldCatStore.createCombinedArr = (cats, owners) => {
 		cats.forEach((cat) => {
 			var ownerId = cat.ownerId;
@@ -20,7 +19,9 @@ var CatStore = ((oldCatStore) => {
 			if (cat.owner !== "None") {
 				ownerBtn = `<button class="btn btn-default owner">${cat.owner}</button>`
 			} else {
-				ownerBtn = `<button class="btn btn-danger owner" id="adopt-${i}">Adopt Me!</button>`
+				ownerBtn = `<button class="btn btn-danger owner" id="adopt-${i}" 
+
+				>Adopt Me!</button>`
 			}
 			let newCat = `
  				<div class="col-xs-3">
@@ -37,11 +38,14 @@ var CatStore = ((oldCatStore) => {
 	}
 
 
-	oldCatStore.writeToDom = (str) => {
+	oldCatStore.writeToDom = (str) => {		
 		document.getElementById("cats-container").innerHTML = str; 
 	}
 
-
+	oldCatStore.launchAdoptModal = (index) => {
+		document.getElementById("currentCatIndex").innerHTML = index;
+		$('#adoptModal').modal();
+	}
 	return oldCatStore
 
 })(CatStore || {})
